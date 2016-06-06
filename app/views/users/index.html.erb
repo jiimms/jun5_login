@@ -1,0 +1,9 @@
+<h1>Users#index</h1>
+
+<% @user.each do |user|%>
+<%= user.name%>
+<%= user.email%>
+<%= link_to "Edit", edit_user_path(user)%>
+<%= link_to "Destroy",user, method: :delete, data: {confirm: "sure?"}%><br>
+
+<% end%>
