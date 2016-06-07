@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-  	@product=Product.new(product_params)
+  	@product=current_user.products.new(product_params)
   	if @product.save
   		flash[:success] ="New product added"
   		redirect_to action: :index
@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def index
+  	@product=current_user.products
   end
 
   def edit

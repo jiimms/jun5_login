@@ -2,3 +2,5 @@
 
 <%= @user.name%><br>
 <%= @user.email%><br>
+<%=current_user.products.count%>
+<%=link_to "List of Products", products_path%>
