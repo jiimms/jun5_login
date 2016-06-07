@@ -15,7 +15,9 @@ class UsersController < ApplicationController
   end
  
   def index
-  	@user=User.all
+    @user=User.where(email: current_user.email)
+  	#@user=current_user
+    
   end
 
   def edit
